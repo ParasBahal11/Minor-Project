@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie-ticket-booking</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GOa9K0ZHy1n1UZqVf+X1Fcf39/V05CFenZ7MF9V5I9BJbxiubJXq5iEBCDhGZUkq" crossorigin="anonymous">
+
+    <script defer src="scripts.js"></script>
+</head>
+
+<body>
+    <div id="preloader">
+        <div class="logo-container">
+            <div class="rock">
+                <h1>
+                    <span>T</span>
+                    <span>I</span>
+                    <span>C</span>
+                    <span>K</span>
+                    <span>E</span>
+                    <span>T</span>
+                    &nbsp;
+                    <span>T</span>
+                    <span>R</span>
+                    <span>E</span>
+                    <span>K</span>
+                </h1>
+            </div>
+
+            <h1 class="slogan">Lights,Camera,Book!</h1>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">TICKET TREK</a><br>
+            <span>"Lights, Camera, Book!"</span>
+        </div>
+
+        <div class="search-bar">
+            <button id="searchToggle"
+                style="background-color: transparent; border: none; font-size: 20px;color: #9e9999;   cursor: pointer;"><i
+                    class="fa fa-search"></i></button>
+            <input type="text" id="searchInput" placeholder="Search for movies..." />
+        </div>
+
+        <!-- Modal for "Movie Not Found" -->
+        <div class="Search-modal">
+            <div class="Search-modal-content">
+                <p>Movie not found.</p>
+                <button class="Search-close-btn">&times;</button>
+            </div>
+        </div>
+
+      
+        <div id="userLogo" class="user-logo" style="display: none; cursor: pointer;"></div>
+
+
+
+
+        <div class="nav-links">
+            <ul>
+                <li><a href="#Home"><i class="fas fa-home"></i> Home</a></li>
+                <li class="dropdown">
+                    <a href="#"><i class="fas fa-film"></i> Category <i class="fas fa-caret-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#Action"><i class="fas fa-fist-raised"></i> Action</a></li>
+                        <li><a href="#Romance"><i class="fas fa-heart"></i> Romance</a></li>
+                        <li><a href="#Drama"><i class="fas fa-theater-masks"></i> Drama</a></li>
+                        <li><a href="#Sci-fic"><i class="fas fa-rocket"></i> Sci-fi</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#MyBooking"><i class="fas fa-ticket-alt"></i> My Booking</a></li>
+                <li><button class="dark-mode-toggle"><i class="fas fa-moon"></i></button></li>
+                <li id="authMenu"></li>
+            </ul>
+
+        </div>
+
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+
+    <section id="Home"></section>
+
+
+
+    <section class="slider-container">
+        <div class="slider">
+            <div class="slide" data-trailer="https://www.youtube.com/embed/TcMBFSGVi1c">
+                <img src="MoviesImages/avengers.jpg" alt="Movie 1">
+                <div class="slide-overlay">
+                    <div class="overlay-text">Watch Trailer</div>
+                </div>
+                <div class="slide-info">
+                    <a href="Booking/index.html">
+                        <button class="trailer-btn" data-movie="Avengers-The End Game"
+                            data-price="300">Book-Now</button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="slide" data-trailer="https://www.youtube.com/embed/vqu4z34wENw">
+                <img src="MoviesImages/pATHAN.jpg" alt="Movie 2">
+                <div class="slide-overlay">
+                    <div class="overlay-text">Watch Trailer</div>
+                </div>
+                <div class="slide-info">
+                    <a href="Booking/index.html">
+                        <button class="trailer-btn" data-movie="Pathan" data-price="289">Book-Now</button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="slide" data-trailer="https://www.youtube.com/embed/wlSZ1ITjOvw">
+                <img src="MoviesImages/open.jpeg" alt="Movie 3">
+                <div class="slide-overlay">
+                    <div class="overlay-text">Watch Trailer</div>
+                </div>
+                <div class="slide-info">
+                    <a href="Booking/index.html">
+                        <button class="trailer-btn" data-movie="Oppenheimer" data-price="345">Book-Now</button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="slide" data-trailer="https://www.youtube.com/embed/y6ofOIz9LJ">
+                <img src="MoviesImages/Fighter.jpg" alt="Movie 4">
+                <div class="slide-overlay">
+                    <div class="overlay-text">Watch Trailer</div>
+                </div>
+                <div class="slide-info">
+                    <a href="Booking/index.html">
+                        <button class="trailer-btn" data-movie="Fighter" data-price="270">Book-Now</button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="slide" data-trailer=" https://www.youtube.com/embed/rRBXAOmPskE">
+                <img src="MoviesImages/bhool.jpg" alt="BhoolBhuliya 3">
+                <div class="slide-overlay">
+                    <div class="overlay-text">Watch Trailer</div>
+                </div>
+                <div class="slide-info">
+                    <a href="Booking/index.html">
+                        <button class="trailer-btn" data-movie="Deadpool 2" data-price="320">Book-Now</button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="slide" data-trailer=" https://www.youtube.com/embed/MD7v0-igVIM?si=NGIUvlaGFeY7OS8l">
+                <img src="MoviesImages/sinf.jpg" alt="Singham">
+                <div class="slide-overlay">
+                    <div class="overlay-text">Watch Trailer</div>
+                </div>
+                <div class="slide-info">
+                    <a href="Booking/index.html">
+                        <button class="trailer-btn" data-movie="Jurassic World: Dominion"
+                            data-price="350">Book-Now</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <button class="prev-btn">&#10094;</button>
+        <button class="next-btn">&#10095;</button>
+    </section>
+
+    <section class="action-movie-slider">
+        <div class="action-logo" id="Action">
+            <h1>Action Movies</h1>
+        </div>
+        <div class="action-slider">
+
+            <!-- Action Movies -->
+            <div class="movie-card" data-trailer="https://www.youtube.com/embed/9ilu5siW-d8">
+                <img src="MoviesImages/Chotemiya.jpeg" alt="Chotemiya">
+                <div class="overlay">
+                    <div class="overlay-text">Watch Trailer</div>
+                </div>
+                <div class="movie-info">
+                    <h3>Bademiya Chotemiya</h3>
+                    <p><strong>Length:</strong> 2h 10m</p>
+                    <p><strong>Language:</strong> Hindi</p>
+                    <p><strong>Review:</strong> 7.0/10</p>
+                    <div class="rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <a href="Booking/index.html"><button class="book-now-btn" data-movie="Bademiya Chotemiya"
+                            data-price="200">Book-Now</button></a>
+                </div>
+            </div>
+
+
+           
+            <div class="movie-card" data-trailer="https://www.youtube.com/embed/73_1biulkYk">
+                <img src="MoviesImages/Deadpol.jpeg" alt="Deadpool">
+                <div class="overlay">
+                    <div class="overlay-text">Watch Trailer</div>
+                </div>
+                <div class="movie-info">
+                    <h3>Deadpool & Wolverine</h3>
+                    <p><strong>Length:</strong> 2h 60m</p>
+                    <p><strong>Language:</strong> English</p>
+                    <p><strong>Review:</strong> 8.5/10</p>
+                    <div class="rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <a href="Booking/index.html"><button class="book-now-btn" data-movie="Deadpool & Wolverine"
+                            data-price="325">Book-Now</button></a>
+                </div>
+
+            </div>
+
+          
+            <div class="movie-card" data-trailer="https://www.youtube.com/embed/txulSPxlj6w">
+                <img src="MoviesImages/pushpa.jpg" style="width: 180px;" alt="pushpa">
+                <div class="overlay">
+                    <div class="overlay-text">Watch Trailer</div>
+                </div>
+                <div class="movie-info">
+                    <h3>Pushpa 2</h3>
+                    <p><strong>Length:</strong> 2h 20m</p>
+                    <p><strong>Language:</strong> Hindi</p>
+                    <p><strong>Review:</strong> 7.5/10</p>
+                    <div class="rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <a href="Booking/index.html"><button class="book-now-btn" data-movie="Pushpa 2"
+                            data-price="230">Book-Now</button></a>
+                </div>
+
+            </div>
+
+            
+            <div class="movie-card" data-trailer="https://www.youtube.com/embed/FV3bqvOHRQo">
+                <img src="MoviesImages/Aquaman.jpeg" style="width: 170px;" alt="Aquaman">
+                <div class="overlay">
+                    <div class="overlay-text">Watch Trailer</div>
+                </div>
+                <div class="movie-info">
+                    <h3>Aquaman</h3>
+                    <p><strong>Length:</strong> 2h 10m</p>
+                    <p><strong>Language:</strong> English</p>
+                    <p><strong>Review:</strong> 6.0/10</p>
+                    <div class="rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+
+                    </div>
+                    <a href="Booking/index.html"><button class="book-now-btn" data-movie="Aquaman"
+                            data-price="189">Book-Now</button></a>
+                </div>
+
+            </div>
+
+
+        </div>
+    </section>
+
+    <section class="action-movie-slider">
+        <div class="action-logo" id="Romance">
+            <h1>Romantic Movies</h1>
+        </div>
+        <div class="action-slider">
+
+            <!-- Romance Movies -->
+            <div class="movie-card" data-trailer="https://www.youtube.com/embed/bD5FShPZdpw">
+                <img src="MoviesImages/Rockstar.jpeg" style="width: 180px;" alt="Rockstar">
+                <div class="overlay">
+                    <div class="overlay-text">Watch Trailer</div>
+                </div>
+                <div class="movie-info">
+                    <h3>Rockstar</h3>
+                    <p><strong>Length:</strong> 2h 60m</p>
+                    <p><strong>Language:</strong> Hindi</p>
+                    <p><strong>Review:</strong> 8.5/10</p>
+                    <div class="rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <a href="Booking/index.html"><button class="book-now-btn" data-movie="Rockstar"
+                            data-price="245">Book-Now</button></a>
+                </div>
+            </div>
+
+           
+            <div class="movie-card" data-trailer="https://www.youtube.com/embed/7UzSekc0LoQ">
+                <img src="MoviesImages/AgeAdline.jpeg" style="width: 180px" ; alt="AgeAdline">
+                <div class="overlay">
+                    <div class="overlay-text">Watch Trailer</div>
+                </div>
+                <div class="movie-info">
+                    <h3>The Age of Adaline</h3>
+                    <p><strong>Length:</strong> 2h 40m</p>
+                    <p><strong>Language:</strong> English</p>
+                    <p><strong>Review:</strong> 8.5/10</p>
+                    <div class="rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <a href="Booking/index.html"><button class="book-now-btn" data-movie="The Age of Adaline"
+                            data-price="200">Book-Now</button></a>
+                </div>
+            </div>
+
+            
+            <div class="movie-card" data-trailer="https://www.youtube.com/embed/Z_PODraXg4E">
+                <img src="MoviesImages/A dil.jpeg" style="width: 180px" ; alt="A dil">
+                <div class="overlay">
+                    <div class="overlay-text">Watch Trailer</div>
+                </div>
+                <div class="movie-info">
+                    <h3>Ae Dil Hai Mushkil</h3>
+                    <p><strong>Length:</strong> 2h 30m</p>
+                    <p><strong>Language:</strong> Hindi</p>
+                    <p><strong>Review:</strong> 8.5/10</p>
+                    <div class="rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <a href="Booking/index.html"><button class="book-now-btn" data-movie="Ae Dil Hai Mushkil"
+                            data-price="286">Book-Now</button></a>
+                </div>
+            </div>
+
+           
+
+            <div class="movie-card" data-trailer="https://www.youtube.com/embed/Ut-5fcY145o">
+                <img src="MoviesImages/SitaRamm.jpeg" style="width: 180px;" alt="SitaRamm">
+                <div class="overlay">
+                    <div class="overlay-text">Watch Trailer</div>
+                </div>
+                <div class="movie-info">
+                    <h3>Sita Ramam</h3>
+                    <p><strong>Length:</strong> 2h 60m</p>
+                    <p><strong>Language:</strong> Hindi</p>
+                    <p><strong>Review:</strong> 9.5/10</p>
+                    <div class="rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <a href="Booking/index.html"><button class="book-now-btn" data-movie="Sita Ramam"
+                            data-price="300">Book-Now</button></a>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <section class="action-movie-slider">
+        <div class="action-logo" id="Drama">
+            <h1>Drama Movies</h1>
+        </div>
+        <div class="action-slider">
+            <!-- Drama Movies -->
+
+            <div class="movie-card" data-trailer="">
+                <img src="MoviesImages/Shaitan.jpeg" style="width:180px;" alt="Shaitan">
+                <div class="overlay">
+                    <div class="overlay-text">Watch Trailer</div>
+                </div>
+                <div class="movie-info">
+                    <h3>Shaitan</h3>
+                    <p><strong>Length:</strong> 2h 40m</p>
+                    <p><strong>Language:</strong> Hindi</p>
+                    <p><strong>Review:</strong> 7.5/10</p>
+                    <div class="rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <a href="Booking/index.html"><button class="book-now-btn" data-movie="Shaitan"
+                            data-price="198">Book-Now</button></a>
+                </div>
+            </div>
+
+           
+            <div class="movie-card" data-trailer="https://www.youtube.com/embed/xB7b3RzicUU">
+                <img src="MoviesImages/FamilyStar.jpeg" style="width: 180px" ; alt="FamilyStar">
+                <div class="overlay">
+                    <div class="overlay-text">Watch Trailer</div>
+                </div>
+                <div class="movie-info">
+                    <h3>FamilyStar</h3>
+                    <p><strong>Length:</strong> 2h 20m</p>
+                    <p><strong>Language:</strong> Hindi</p>
+                    <p><strong>Review:</strong> 8.5/10</p>
+                    <div class="rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <a href="Booking/index.html"><button class="book-now-btn" data-movie="FamilyStar"
+                            data-price="230">Book-Now</button></a>
+                </div>
+            </div>
+
+           
+            <div class="movie-card" data-trailer="https://www.youtube.com/embed/Ytc2eifpiuQ">
+                <img src="MoviesImages/family.jpeg" style="width: 180px" ; alt="family">
+                <div class="overlay">
+                    <div class="overlay-text">Watch Trailer</div>
+                </div>
+                <div class="movie-info">
+                    <h3>A Family Affair</h3>
+                    <p><strong>Length:</strong> 2h 40m</p>
+                    <p><strong>Language:</strong> English</p>
+                    <p><strong>Review:</strong> 7.5/10</p>
+                    <div class="rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <a href="Booking/index.html"><button class="book-now-btn" data-movie="A Family Affair"
+                            data-price="234">Book-Now</button></a>
+                </div>
+            </div>
+
+            
+            <div class="movie-card" data-trailer="https://www.youtube.com/embed/w_N6d4ec79c">
+                <img src="MoviesImages/Teri hi.jpeg" style="width: 180px;" alt="teri hi">
+                <div class="overlay">
+                    <div class="overlay-text">Watch Trailer</div>
+                </div>
+                <div class="movie-info">
+                    <h3>Teri Baaton Me Asa</h3>
+                    <p><strong>Length:</strong> 2h 10m</p>
+                    <p><strong>Language:</strong> Hindi</p>
+                    <p><strong>Review:</strong> 8.0/10</p>
+                    <div class="rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <a href="Booking/index.html"><button class="book-now-btn" data-movie="Teri Baaton Me Asa"
+                            data-price="279">Book-Now</button></a>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <section class="action-movie-slider">
+        <div class="action-logo" id="Sci-fic">
+            <h1>Sci-fic Movies</h1>
+        </div>
+        <div class="action-slider">
+            <!-- Sci-fic Movies -->
+
+            <div class="movie-card" data-trailer="https://www.youtube.com/embed/q10nfS9V090">
+                <img src="MoviesImages/mangal.jpeg" style="width: 180px;" alt="mangal">
+                <div class="overlay">
+                    <div class="overlay-text">Watch Trailer</div>
+                </div>
+
+                <div class="movie-info">
+                    <h3>Misson Mangal</h3>
+                    <p><strong>Length:</strong> 2h 45 m</p>
+                    <p><strong>Language:</strong> Hindi</p>
+                    <p><strong>Review:</strong> 9.0/10</p>
+                    <div class="rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <a href="Booking/index.html"><button class="book-now-btn" data-movie="Misson Mangal"
+                            data-price="285">Book-Now</button></a>
+                </div>
+            </div>
+
+           
+            <div class="movie-card" data-trailer="https://www.youtube.com/embed/8Qn_spdM5Zg">
+                <img src="MoviesImages/Starwars.jpeg" style="width: 180px" ; alt="starwars">
+                <div class="overlay">
+                    <div class="overlay-text">Watch Trailer</div>
+                </div>
+                <div class="movie-info">
+                    <h3>StarWars</h3>
+                    <p><strong>Length:</strong> 2h 10m</p>
+                    <p><strong>Language:</strong> English</p>
+                    <p><strong>Review:</strong> 8.5/10</p>
+                    <div class="rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <a href="Booking/index.html"><button class="book-now-btn" data-movie="StarWars"
+                            data-price="250">Book-Now</button></a>
+                </div>
+            </div>
+
+            
+            <div class="movie-card" data-trailer="https://www.youtube.com/embed/d9MyW72ELq0">
+                <img src="MoviesImages/Avtar.jpeg" style="width: 180px" ; alt="avtar">
+                <div class="overlay">
+                    <div class="overlay-text">Watch Trailer</div>
+                </div>
+                <div class="movie-info">
+                    <h3>Avatar</h3>
+                    <p><strong>Length:</strong> 2h 50m</p>
+                    <p><strong>Language:</strong> English</p>
+                    <p><strong>Review:</strong> 9.0/10</p>
+                    <div class="rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <a href="Booking/index.html"><button class="book-now-btn" data-movie="Avatar"
+                            data-price="300">Book-Now</button></a>
+                </div>
+            </div>
+
+           
+            <div class="movie-card" data-trailer="https://www.youtube.com/embed/XrxXY9F4f5c">
+                <img src="MoviesImages/2.0.jpeg" style="width: 180px;" alt="2.0">
+                <div class="overlay">
+                    <div class="overlay-text">Watch Trailer</div>
+                </div>
+                <div class="movie-info">
+                    <h3>Robot-2.0</h3>
+                    <p><strong>Length:</strong> 2h 30m</p>
+                    <p><strong>Language:</strong> Hindi</p>
+                    <p><strong>Review:</strong> 7.5/10</p>
+                    <div class="rating">
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <a href="Booking/index.html"><button class="book-now-btn" data-movie="Robot-2.0"
+                            data-price="170">Book-Now</button></a>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <div class="booking-logo" id="MyBooking">
+        <h1>My Booking</h1>
+    </div>
+
+
+    <div id="trailerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <iframe id="trailerFrame" width="100%" height="400px" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>About Us</h3>
+                <p>TICKET_TREK is your go-to platform for movie ticket bookings, offering seamless ticket purchasing and
+                    the latest movie trailers. Stay connected for updates on upcoming blockbusters!</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#Action">Action</a>
+                <a href="#Romance">Romance</a>
+                <a href="#Drama">Drama</a>
+                <a href="#Sci-fic">Sci-fi</a>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: support@tickettrek.com</p>
+                <p>Phone: +91 9026123853</p>
+                <p>Address: 123 Movie St., Cinema City, INDIA</p>
+            </div>
+            <div class="footer-newsletter">
+                <h3>Subscribe to Our Newsletter</h3>
+                <form id="newsletterForm">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+        <div class="footer-info">
+            <p>&copy; 2024 TICKET_TREK. All Rights Reserved. <a href="#">Privacy Policy</a> | <a href="#">Terms of
+                    Service</a></p>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
