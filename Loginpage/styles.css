@@ -1,0 +1,96 @@
+
+.form-container {
+    max-width: 400px;
+    margin: 150px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #4b0bdf, #655757);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: white;
+}
+
+
+.form-tabs {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+    transition: background 0.3s ease;
+}
+
+.tab-btn.active {
+    background: #f39c12;
+    border-radius: 5px;
+}
+
+
+.form-content {
+    display: none;
+}
+
+.form-content.active-form {
+    display: block;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+.form-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f39c12;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.form-btn:hover {
+    background-color: #f7a539;
+}
+
+
+.back-btn {
+    background: #f39c12;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.back-btn:hover {
+    background: #f7a539;
+}
+
+body {
+    background-color: black;
+}
+
+
+#welcomeMessage {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
