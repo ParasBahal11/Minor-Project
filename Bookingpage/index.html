@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Movie Seat Booking</title>
+  </head>
+  <body>
+   
+    <div class="movie-container">
+     <h1 >Ticket TREK</h1>
+      <button class="back-btn" onclick="goToHomepage()">Back</button>
+        <p>Movie: <span id="selected-movie">None</span></p>
+      </div>
+
+    <ul class="showcase">
+      <li>
+        <div class="seat"></div>
+        <small>Available</small>
+      </li>
+      <li>
+        <div class="seat selected"></div>
+        <small>Selected</small>
+      </li>
+      <li>
+        <div class="seat sold"></div>
+        <small>Sold</small>
+      </li>
+    </ul>
+    <div class="container">
+      <div class="screen"></div>
+
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+      </div>
+      <div class="row">
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+        <div class="seat sold"></div>
+        <div class="seat"></div>
+      </div>
+    </div>
+
+    <p class="text">
+      You have selected <span id="count">0</span> seat for a price of RS.<span
+        id="total">0</span>
+    </p>
+
+    <button id="book-now" class="btn">Book Now</button>
+
+   
+    <div id="booking-form-card" class="form-card hidden">
+      <h2>Booking Details</h2>
+      <form id="booking-form">
+        <label for="customer-name">Customer Name:</label>
+        <input type="text" id="customer-name" required />
+
+        <label for="customer-number">Customer Number:</label>
+        <input type="tel" id="customer-number" required />
+
+        <label for="movie-name">Movie Name:</label>
+        <input type="text" id="movie-name" readonly />
+
+        <label for="total-seats">Total Seats:</label>
+        <input type="text" id="total-seats" readonly />
+
+        <label for="total-price">Total Price:</label>
+        <input type="text" id="total-price" readonly />
+
+        <label for="payment-method">Payment Method:</label>
+        <select id="payment-method" required>
+          <option value="Online">Online</option>
+          <option value="Credit Card">Credit Card</option>
+        </select>
+
+        <button type="submit" class="btn">Generate Ticket</button>
+      </form>
+    </div>
+
+    <div id="ticket-section" class="hidden">
+      <h2>Your Ticket</h2>
+      <div id="ticket-card" class="ticket-card">
+        <div id="ticket-details">
+        
+        </div>
+      </div>
+      <button id="download-ticket" class="btn">Download Ticket</button>
+    </div>
+    
+    
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
+  </body>
+</html>

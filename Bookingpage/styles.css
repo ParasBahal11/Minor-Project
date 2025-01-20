@@ -1,0 +1,369 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: linear-gradient(to right, #1a1818, #4b0bdf);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: "Lato", sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .movie-container {
+    margin: 20px 0;
+    margin-top: 80px;
+    font-size: 17px;
+    text-align: center;
+  }
+  
+
+.back-btn {
+  background: #f39c12;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  
+}
+
+.back-btn:hover {
+  background: #f7a539;
+}
+  .movie-container select {
+    background-color: #fff;
+    border: 0;
+    border-radius: 5px;
+    font-size: 1em;
+    margin-left: 10px;
+    text-align: center;
+    padding: 8px 15px;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  
+  .container {
+    perspective: 1000px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 700px; 
+  }
+  
+  .seat {
+    background-color: #444451;
+    height: 26px;
+    width: 32px;
+    margin: 3px;
+    font-size: 50px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    display: inline-block;
+  }
+  
+  .seat.selected {
+    background-color: green;
+  }
+  
+  .seat.sold {
+    background-color: #fff;
+  }
+  
+  .seat:nth-of-type(2) {
+    margin-right: 18px;
+  }
+  
+  .seat:nth-last-of-type(2) {
+    margin-left: 18px;
+  }
+  
+  .seat:not(.sold):hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
+  
+  .showcase .seat:not(.sold):hover {
+    cursor: default;
+    transform: scale(1);
+  }
+  
+  .showcase {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #777;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+  }
+  
+  .showcase li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+  }
+  
+  .showcase li small {
+    margin-left: 5px;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .screen {
+    background-color: #fff;
+    height: 80px;
+    width: 100%;
+    justify-content: center;
+    max-width: 500px; 
+    margin: 15px auto;
+    
+    transform: rotateX(-48deg);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+  }
+  
+  p.text {
+    margin: 5px 0;
+    font-size: 20px;
+    text-align: center;
+  }
+  
+  p.text span {
+    color: rgb(158, 248, 158);
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 20px;
+    }
+  
+    .movie-container select {
+      font-size: 0.9rem;
+      padding: 6px 12px;
+    }
+  
+    .screen {
+      height: 70px;
+      margin-left: auto;
+    }
+  
+    .seat {
+      width: 28px;
+      height: 28px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      padding: 0 10px;
+    }
+  
+    .movie-container select {
+      font-size: 0.8rem;
+      padding: 5px 10px;
+    }
+  
+    .screen {
+      height: 60px;
+      margin-left:auto ;
+    }
+  
+    .seat {
+      width: 24px;
+      height: 24px;
+      margin: 2px;
+    }
+  
+    .showcase li small {
+      font-size: 0.8rem;
+    }
+  }
+  
+  .hidden {
+  display: none;
+}
+
+.btn {
+  background-color: green;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.form-card {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  max-width: 400px;
+  margin: 20px auto;
+  width: 90%;
+}
+  .form-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-card label {
+  margin: 10px 0 5px;
+  font-size: 1rem;
+}
+
+.form-card input,
+.form-card select {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .form-card {
+    padding: 15px;
+    max-width: 90%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    
+  }
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+
+  .form-card label {
+    font-size: 0.9rem;
+  }
+
+  .form-card input,
+  .form-card select {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+ 
+}
+
+
+@media (max-width: 480px) {
+    .form-card {
+      padding: 8px; 
+      max-width: 85%; 
+      border-radius: 8px; 
+      font-size: 0.9rem;
+     
+    }
+   
+    
+  
+    .form-card label {
+      font-size: 0.8rem; 
+    }
+  
+    .form-card input,
+    .form-card select {
+      padding: 6px; 
+      font-size: 0.8rem; 
+    }
+  
+    .btn {
+      padding: 6px 12px;
+      font-size: 0.8rem; 
+    }
+  
+   
+  }
+ 
+
+
+#ticket-section {
+  background-color: #242333;
+  color: white;
+  padding: 20px;
+  margin: 20px auto;
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+#ticket-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #f39c12; 
+}
+
+/* Ticket Card Styling */
+.ticket-card {
+  background: linear-gradient(145deg, #3a3b4f, #2b2c3d);
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6), -4px -4px 10px rgba(255, 255, 255, 0.1); 
+}
+
+#ticket-details {
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #e0e0e0;
+}
+
+#ticket-details strong {
+  color: #f39c12;
+}
+
+#download-ticket {
+  background-color: #f39c12;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+#download-ticket:hover {
+  background-color: #d78d10;
+}
+
+
+@media (max-width: 768px) {
+  #ticket-section {
+    width: 95%;
+  }
+  #ticket-section h2 {
+    font-size: 1.5rem;
+  }
+  #ticket-details {
+    font-size: 0.9rem;
+  }
+  #download-ticket {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+}
